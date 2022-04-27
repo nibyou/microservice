@@ -12,9 +12,9 @@ $ npm install
 
 ## Configuration
 
-Check out the `config.example.ts` file in the root directory.
+Check out the `example.env` file in the root directory.
 
-Fill out the variables and rename the file to `config.ts`.
+Fill out the variables and rename the file to `.env`.
 
 ## Running the app
 
