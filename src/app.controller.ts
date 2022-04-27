@@ -1,18 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, HttpCode } from '@nestjs/common';
 import { AppService } from './app.service';
-import { ApiResponse } from '@nestjs/swagger';
+import { ApiOkResponse } from '@nestjs/swagger';
 import { JsonResponse } from './types/JsonResponse';
+import { Public } from 'nest-keycloak-connect';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get('health')
-  @ApiResponse({
+  @ApiOkResponse({
     status: 200,
     description: 'API health check',
     type: JsonResponse,
   })
+  @HttpCode(200)
+  @Public()
   getHealth(): JsonResponse {
     return this.appService.getHealth();
   }
