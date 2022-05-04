@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { JsonResponse } from './types/JsonResponse';
+import { JsonResponse } from '@nibyou/types';
 
 @Injectable()
 export class AppService {
