@@ -6,7 +6,7 @@ import 'dotenv/config';
 (async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
-  /**const corsOptionsCallback = (req, callback) => {
+  const corsOptionsCallback = (req, callback) => {
     const corsOptions = { origin: false, credentials: true };
     if (process.env.CORS_ORIGINS.split(',').includes(req.headers.origin)) {
       corsOptions.origin = true;
@@ -14,7 +14,7 @@ import 'dotenv/config';
     callback(null, corsOptions);
   };
   
-  app.enableCors(corsOptionsCallback)**/
+  app.enableCors(corsOptionsCallback)
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('Nibyou Microservice')
@@ -24,5 +24,8 @@ import 'dotenv/config';
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api', app, document);
 
-  return app.listen(process.env.PORT || 3000);
+  let listenOption = [process.env.PORT || 3000];
+  process.env.ENV === "prod" && listenOptions.push("node"); // add "node" server name for docker-compose routing
+
+  return app.listen(...listenOptions);
 })();
