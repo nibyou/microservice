@@ -24,8 +24,8 @@ import 'dotenv/config';
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api', app, document);
 
-  let listenOption = [process.env.PORT || 3000];
-  process.env.ENV === "prod" && listenOptions.push("node"); // add "node" server name for docker-compose routing
-
-  return app.listen(...listenOptions);
+  return app.listen(
+    process.env.PORT || 3000,
+    process.env.ENV === 'prod' ? 'node' : 'localhost',
+  );
 })();
