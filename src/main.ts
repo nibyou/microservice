@@ -20,6 +20,7 @@ import 'dotenv/config';
     .setTitle('Nibyou Microservice')
     .setDescription('Microservice Description')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, swaggerConfig);
   SwaggerModule.setup('api', app, document);
