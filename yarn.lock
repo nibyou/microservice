@@ -683,10 +683,10 @@
     keycloak-connect "^15.1.1"
     nest-keycloak-connect "^1.8.3"
 
-"@nibyou/types@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@nibyou/types/-/types-1.0.1.tgz#fb4ad9d9027391e7de5d8e540f17b923c723684b"
-  integrity sha512-MZO7Uw9Dfxr8gLG56a6eKik8yWOnoEseFK5H/R/fvVDRWFP0I5BsjWqTpb+/kMU7V/9RN6bkbdIXhvOPhJg1zQ==
+"@nibyou/types@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@nibyou/types/-/types-1.4.0.tgz#f46cd86379a3b431ff5be8fc468516893fcc8ad8"
+  integrity sha512-VCr5SCKMKATZegeup5WOu5YdZaIvNMmCanNuKAEFRznsm5G4/57sVp2GpAEpBtQXnGvfNGdVI8B/kc4H5E07og==
   dependencies:
     "@nestjs/swagger" "^5.2.1"
     "@types/node" "^17.0.31"
